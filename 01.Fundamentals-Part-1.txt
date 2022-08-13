@@ -1,0 +1,35 @@
+-Name the three ways to declare a variable
+var variable
+let variable
+const variable
+-Which of the three variable declarations should you avoid and why?
+var as it is antiquated and may not perform as expected
+-What rules should you follow when naming variables?
+The name should have only numbers and letter (including $ and _)
+the name cannot begin with a number
+if multiple words are used camelCase is recommended
+Case is important
+You cannot use reserved words (e.g: let return class)
+const variables use ALL_CAPS
+Stay human-readable and descriptive
+-What should you look out for when using the + operator with numbers and strings?
+when using the + operator with numbers and strings, check to make sure what data type the operands are and what data type you are trying to return
+-How does the % operator work?
+The % operator divides the two operands and returns the remainder ( 2%5 = 1)
+-Explain the difference between == and ===.
+== will check for equivalency between the same data type and attempt to convert if the operands are different types. === will also test values but requires that the types are the same; if the types are different === will return false.
+-When would you receive a NaN result?
+You would receive a NaN result when trying to add a number and a string that contains characters other than a number
+-How do you increment and decrement a number?
+++number increments
+--number decrements
+-Explain the difference between prefixing and post-fixing increment/decrement operators.
+prefixing will increment the number before returning the variable while post-fixing the number will return the variable then apply the decrement.
+-What is operator precedence and how is it handled in JS?
+Operator precedence is the "order of operations" of the programming world. In other words, operators with a higher precedence will be calculated first, using the nearby operands. 
+-How do you access developer tools and the console?
+right-click inspect then console or f12.
+-How do you log information to the console?
+console.log(information)
+-What does unary plus operator do to string representations of integers?
+unary plus operator will convert the string representations of integers to numbers (javascript 64bit floats)
