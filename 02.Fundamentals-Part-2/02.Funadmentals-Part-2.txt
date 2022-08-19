@@ -1,35 +1,96 @@
 -What are the eight data types in JavaScript?
+1. string
+2. numbers (float)
+3. big int 
+4. booleans
+5. null
+6. undefined
+7. symbol
+8. object
 
 -Which data type is NOT primitive?
+object
 
 -What is the relationship between null and undefined?
+null represents a value of nothing. It belongs to no other datatype. undefined refers to a value that has not been assigned a value at all. In a case where you would declare a variable without assigning a value the undefined variable is automatically assigned. When programmers want to declare a variable and assign a value but are not sure what value will be assigned it is recommended to use the null variable to replace the undefined.
 
 -What is the difference between single, double, and backtick quotes for strings?
+Single and double quotes will create a string however you cannot use the same quote type within a string as the enclosing type as it will cause string creation problems. Backtick quotes are used to create template strings: `Hello, ${name}!`.
 
 -What is the term for embedding variables/expressions in a string?
+This is referred to as a template literal.
 
 -Which type of quote lets you embed variables/expressions in a string?
+Backtick quotes `string`
 
 -How do you embed variables/expressions in a string?
+Use backtick quotes and then ${valiable/expression}: 
+`${variable/expression}`
 
 -How do you escape characters in a string?
+use the backslash before the characters: "Hello \nWorld!'
 
 -What is the difference between the slice/substring/substr string methods?
+slice: extracts a string using the two indices provided, negative values will count from the end
+substr: extracts a string using the beginning index and a length
+substring: extracts a string using two indices, however negative values will be treated as zero
 
 -What are the three logical operators and what do they stand for?
+&& AND: will return false with any false value  
+|| OR : will return true with any true value
+!  NOT: will return the opposite value provided
 
 -What are the comparison operators?
+<, >, ==, ===, <=, >=, !=
 
 -What are truthy and falsy values?
+These result and are calculated from boolean operations
+falsy values are anything like: 0, empty string, null, undefined, NaN
+truthy values are anything else with a value
 
 -What are the falsy values in JavaScript?
+falsy values are anything like: 0, empty string, null, undefined, NaN
 
 -What are conditionals?
+conditionals look at a boolean operation, evaluate it and if true will execute code underneath. This allows for branching paths. 
 
 -What is the syntax for an if/else conditional?
+if (conditional){
+    code
+}
+else {
+    other code
+}
 
 -What is the syntax for a switch statement?
+switch (conditional){
+    case choice1:
+        code;
+        break;
+    case choice2:
+        code;
+        break;
+    default:
+        run this code if all else fails;
+        break;
+}
 
 -What is the syntax for a ternary operator?
+condition ? run this code : run this code instead;
+in other words
+isTrue ? return true: return false;
 
 -What is nesting?
+nesting is placing an ifelse within another if else statement:
+
+if (this is true){
+    if( this is also true){
+        execute this code;
+    }
+    else (first is true but second is false){
+        return this;
+    }
+}
+else {
+    first is false return this;
+}
