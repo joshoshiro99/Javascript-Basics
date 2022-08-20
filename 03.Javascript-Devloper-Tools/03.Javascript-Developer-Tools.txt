@@ -1,0 +1,14 @@
+-How do you open developer tools?
+Right-click inspect
+three dots in the top right -> more tools -> developer tools
+
+-How do you change screen size of a website using developer tools?
+you can drag the developer tools window over
+or 
+you can click on the mobile devices icon and set the screen size of a website there
+
+-What is a breakpoint?
+A breakpoint stops the code from runnning and highlights where the breakpoint stopped the code. 
+
+-How do you set a breakpoint?
+Once in the developer tools window you can select sources and then highlight a line number to place an on-line breakpoint. You may also set a breakpoint by enabling the respectve breakpoint option in the breakpoints submenu
