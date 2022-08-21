@@ -1,0 +1,11 @@
+-What are three reasons why you may see a TypeError?
+1.You may be passing an incorrect type to an argument
+2.You may be modifying an immutable value
+3.using a value in an inappropriate way (e.g trying increment a boolean?)
+
+-What is the key difference between an error and a warning?
+An error will prevent your code from running while a warning will flag a potential error but continue to allow the program to run.
+
+-What is one method you can use to resolve an errors?
+Google the error code and message.
+Discover where the error is coming from.
