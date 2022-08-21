@@ -1,0 +1,22 @@
+-What are the three stages in the problem solving process?
+1. understand the problem
+2. plan the resolution
+3. break into sub-problems and solve
+
+-Why is it important to clearly understand the problem first?
+You could waste time solving a completely different problem
+
+-What can you do to help get a clearer understanding of the problem?
+You can pseuo-code, break it down step by step, or try and explain the problem to another person (or rubber duck). All of these will poke holes is your understanding of the problem.
+
+-What are some of the things you should do in the planning stage of the problem solving process?
+In the planning stage of the problem solving process you should identify the user interface, the inputs and outputs and finally how the inputs change to give the correct outputs.
+
+-What is an algorithm?
+An algorithm is a set of steps to solve a problem.
+
+-What is pseudocode?
+Psuedocode is writing out the algorithm in easy to digest language. 
+
+-What are the advantages of breaking a problem down and solving the smaller problems?
+The advantages of breaking a problem down and solving the smaller problems prevent the programmer from trying to solve a big ambiguous problem. This prevents the complexity of the entire problem from wearing one out.
