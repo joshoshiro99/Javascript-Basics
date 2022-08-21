@@ -1,0 +1,32 @@
+-What are functions useful for?
+Functions are useful for reusing sections of code 
+
+-How do you invoke a function?
+You invoke a function by writing the function name and inluding any arugments in parenthesis.
+e.g. functionName();
+
+-What are anonymous functions?
+anonymous functions are functions that do not have a name listed. This is commonly used when a function requests a function to be passed as an argument.
+e.g. 
+(function () {
+ alert('hello');
+})
+
+-What is function scope?
+function scope is the codespace that the function can see and edit. Scope prevents from functions altering the variables that allow other functions to 
+work.
+
+-What are return values?
+Return values are what a function will hand off to the next line of code. If a return value is not provided the function will hand off undefined. 
+
+-What are arrow functions?
+Arrow functions are a way to write simple functions more efficiently. 
+e.g. 
+
+let sum = function(a, b){
+ return a+b;
+};
+
+becomes
+
+let sum = (a,b) => a + b;
