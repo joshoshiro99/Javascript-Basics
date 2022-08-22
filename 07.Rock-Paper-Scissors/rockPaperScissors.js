@@ -26,9 +26,9 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-	playerSelection = playerSelection.toLower();
-	switch (typeof playerSelection === "String") {
-		case playerSelection == "rock":
+	playerSelection = playerSelection.toLowerCase();
+	switch (playerSelection) {
+		case "rock":
 			if (computerSelection == "scissors") {
 				return 1;
 			}
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 			else {
 				return null;
 			}
-		case playerSelection == "paper":
+		case "paper":
 			if (computerSelection == "scissors") {
 				return 0;
 			}
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
 			else {
 				return null;
 			}
-		case playerSelection == "scissors":
+		case "scissors":
 			if (computerSelection == "paper") {
 				return 1;
 			}
@@ -59,13 +59,45 @@ function playRound(playerSelection, computerSelection) {
 				return null;
 			}
 		default:
-			return "incorrect selection. please try again";
+			return undefined;
 	}
 }
+
+function checkPlayerInputisValid(playerSelection) {
+	if (typeof playerSelection === "string"){
+		if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+}
+
+
 
 function game(){
 	for (let round = 0; round < 5; round++){
 		let playerSelection = prompt("Please input your selection: ");
-		playRound(playerSelection, getComputerChoice());
+		if (playerSelection.toLowerCase() == "exit") return false;
+		if (!checkPlayerInputisValid(playerSelection)){
+			console.log("Please input a correct value");
+			round--;
+		} else {
+			let computerSelection = getComputerChoice();
+		
+			let result = playRound(playerSelection, computerSelection);
+			let message;
+		
+			if (result == null){
+				message = `This was a tie. Both players chose ${playerSelection}.`;
+			} else if (result){
+				message = `You WIN! ${playerSelection} beats ${computerSelection}.`;
+			} else {
+				message = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
+			} 
+			console.log(message)
+		}
 	}
 }
