@@ -1,0 +1,22 @@
+-What is an array?
+An array is a list of items stored in a variable.
+-What are arrays useful for?
+Arrays are useful for holding many values under one name. It also allows for easy access to a specific value via an index value.
+-How do you access an array element?
+You access an array element via array[index value - 1]
+-How do you change an array element?
+You type the following array[index] = newvalue;
+-What are some useful array properties?
+.length is a useful array property 
+-What are some useful array methods?
+.sort will sort the array
+.push and .unshift  will add elements
+.pop and .shift will remove elements
+-What are loops useful for?
+Loops are useful for doing the same thing multiple times in a row
+-What is the break statement?
+a break statement will jump out of a loop
+-What is the continue statement?
+a continue statement will jump to the next iteration of the loop
+-What is the advantage of writing automated tests?
+Writing automated tests is useful for making sure the code you write performs the correct output.

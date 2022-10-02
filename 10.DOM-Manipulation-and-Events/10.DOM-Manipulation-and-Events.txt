@@ -1,0 +1,67 @@
+-What is the DOM?
+The DOM stands for the "Document Object model". It is a tree-like representation of the nodes of the html document. The DOM only exists once the initial webpage is built
+
+-How do you target the nodes you want to work with?
+You target nodes with selectors. e.g. const containter = document.querySelector('#container');
+
+-How do you create an element in the DOM?
+You create an element with a DOM method, docuement.createElement('div');
+*this only creates it in memory, see next question for adding to the page*
+
+-How do you add an element to the DOM?
+use parentNode.appendChild(childNode); to add to the end of the child nodes
+or 
+use parentNode.insertBefore(newNode, referenceNode); to insert before the referenceNode
+
+-How do you remove an element from the DOM?
+parentNode.removeChild(childNode);
+
+-How can you alter an element in the DOM?
+you can add each change individually: 
+div.style.color='blue';
+or
+add multiple changes in one line:
+dive.setAttribute('style', 'color:blue; background:white');
+
+-When adding text to a DOM element, should you use textContent or innerHTML? Why?
+You should use textContent as innerHTML can induce security risks to your webpage.
+
+-Where should you include your JavaScript tag in your HTML file when working with DOM nodes?
+You should include the JavaScript tag at the bottom of the HTML file as the DOM will have been created. If you wish to have the tag in the beginning you can add 'defer' to the tag to postpone running the script until after the DOM is created.
+
+-How do “events” and “listeners” work?
+events are actions that occur on the webpage (clicks or keypresses for example) listeners monitor the page for these actions and often run code associated with an action
+
+-What are three ways to use events in your code?
+1.add the event listener to the html attribute
+2.set the onevent property to the dom object
+3.add an event listener
+
+-Why are event listeners the preferred way to handle events?
+event listeners are the preffered way as you can have multiple event listeners and "allow for separation of concerns" (moves the JS out of the HTML)
+
+-What are the benefits of using named functions in your listeners?
+greatly cleans up the code and makes it easier to read
+
+-How do you attach listeners to groups of nodes?
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
+
+-What is the difference between the return values of querySelector and querySelectorAll?
+querySelector returns a reference to the node selected while querySelectorAll returns a nodeList. * a nodeList is NOT an array*
+
+-What does a “nodelist” contain?
+a nodelist contains a list of references to a list of all matches of the selectors
+
+-Explain the difference between “capture” and “bubbling”
+capture goes from top -> down during an event trigger (body -> div -> button)
+bubbling goes bottom up reporting an event trigger (button -> div -> body)
