@@ -78,7 +78,7 @@ function checkPlayerInputisValid(playerSelection) {
 
 
 function game(){
-	for (let round = 0; round < 5; round++){
+//	for (let round = 0; round < 5; round++){
 		let playerSelection = prompt("Please input your selection: ");
 		if (playerSelection.toLowerCase() == "exit") return false;
 		if (!checkPlayerInputisValid(playerSelection)){
@@ -99,5 +99,5 @@ function game(){
 			} 
 			console.log(message)
 		}
-	}
+//	}
 }
