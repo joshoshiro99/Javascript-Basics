@@ -11,8 +11,21 @@
 //3:Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
 //--Use prompt() to get input from the user.
 //
-//
 
+let buttons = document.querySelectorAll('button');
+buttons.forEach(
+    function(node) {
+        node.addEventListener('click', playRound);
+    }
+);
+
+
+//is there a way to get the query selector to apply to all buttons (yes you can apply to all buttons) and apply the class of the node to the subsequent function call? e.g: 
+//html:
+//<button class='class1'>
+//javascript: 
+//let buttons = document.queryselector('button');
+//
 function getComputerChoice() {
 	let computerChoice = Math.floor(Math.random()*10);
 	switch (computerChoice!=undefined){
@@ -25,8 +38,10 @@ function getComputerChoice() {
 	}
 }
 
-function playRound(playerSelection, computerSelection) {
-	playerSelection = playerSelection.toLowerCase();
+function playRound() {
+	//playerSelection = playerSelection.toLowerCase();
+	let computerSelection = getComputerChoice();
+	let playerSelection = this.className;
 	switch (playerSelection) {
 		case "rock":
 			if (computerSelection == "scissors") {
@@ -63,41 +78,39 @@ function playRound(playerSelection, computerSelection) {
 	}
 }
 
-function checkPlayerInputisValid(playerSelection) {
-	if (typeof playerSelection === "string"){
-		if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
-			return true;
-		} else {
-			return false;
-		}
+// function checkPlayerInputisValid(playerSelection) {
+// 	if (typeof playerSelection === "string"){
+// 		if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
+// 			return true;
+// 		} else {
+// 			return false;
+// 		}
+// 	} else {
+// 		return false;
+// 	}
+// }
+
+/*
+function game(){
+	let playerSelection = prompt("Please input your selection: ");
+	if (playerSelection.toLowerCase() == "exit") return false;
+	if (!checkPlayerInputisValid(playerSelection)){
+		console.log("Please input a correct value");
+		round--;
 	} else {
-		return false;
+		let computerSelection = getComputerChoice();
+
+		let result = playRound(playerSelection, computerSelection);
+		let message;
+
+		if (result == null){
+			message = `This was a tie. Both players chose ${playerSelection}.`;
+		} else if (result){
+			message = `You WIN! ${playerSelection} beats ${computerSelection}.`;
+		} else {
+			message = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
+		} 
+		console.log(message)
 	}
 }
-
-
-
-function game(){
-//	for (let round = 0; round < 5; round++){
-		let playerSelection = prompt("Please input your selection: ");
-		if (playerSelection.toLowerCase() == "exit") return false;
-		if (!checkPlayerInputisValid(playerSelection)){
-			console.log("Please input a correct value");
-			round--;
-		} else {
-			let computerSelection = getComputerChoice();
-		
-			let result = playRound(playerSelection, computerSelection);
-			let message;
-		
-			if (result == null){
-				message = `This was a tie. Both players chose ${playerSelection}.`;
-			} else if (result){
-				message = `You WIN! ${playerSelection} beats ${computerSelection}.`;
-			} else {
-				message = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
-			} 
-			console.log(message)
-		}
-//	}
-}
+*/
