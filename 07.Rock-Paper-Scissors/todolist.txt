@@ -1,0 +1,10 @@
+The odin project:
+x-remove login plays five rounds
+X-create button for each selection
+-add event listener to each button
+—have that call the playRound for respective playerSelection
+-add a div to display results
+—change event listener to display results in div
+-display running score
+—announce winner after 5 points
+

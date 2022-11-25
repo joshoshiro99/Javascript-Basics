@@ -15,17 +15,14 @@
 let buttons = document.querySelectorAll('button');
 buttons.forEach(
     function(node) {
-        node.addEventListener('click', playRound);
+        node.addEventListener('click', buttonListener);
     }
 );
+let playerScore= 0; 
+const playerScoreElement = document.querySelector(".player_score");
+let compScore = 0; 
+const compScoreElement = document.querySelector(".comp_score");
 
-
-//is there a way to get the query selector to apply to all buttons (yes you can apply to all buttons) and apply the class of the node to the subsequent function call? e.g: 
-//html:
-//<button class='class1'>
-//javascript: 
-//let buttons = document.queryselector('button');
-//
 function getComputerChoice() {
 	let computerChoice = Math.floor(Math.random()*10);
 	switch (computerChoice!=undefined){
@@ -38,10 +35,35 @@ function getComputerChoice() {
 	}
 }
 
-function playRound() {
+function buttonListener () {
+	let playerSelection = this.className; //returns undefined
+	
+	let result = playRound(playerSelection); //parameter undefined, returns undefined
+	//(later)
+	//display running score
+	//announce a winner after 5 points
+	const resultsElement = document.createElement("p");
+	if(result){
+		resultsElement.innerText = 'YOU WON';
+		playerScore++;
+		playerScoreElement.innerText = playerScore;
+	}
+	else if(!result){
+		resultsElement.innerText = 'YOU LOST';
+		compScore++;
+		compScoreElement.innerText = compScore;
+	}
+	else {
+		resultsElement.innerText = 'TIE';
+	}
+	
+	document.body.appendChild(resultsElement);
+
+}
+
+function playRound(playerSelection) {
 	//playerSelection = playerSelection.toLowerCase();
 	let computerSelection = getComputerChoice();
-	let playerSelection = this.className;
 	switch (playerSelection) {
 		case "rock":
 			if (computerSelection == "scissors") {
