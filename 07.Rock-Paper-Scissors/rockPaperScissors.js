@@ -1,17 +1,4 @@
-//rock paper scissors console game
-//
-//input: player types rock, paper or scissors (case insensitive)
-//output: result of player vs computer round
-//
-//XX1:Your game is going to play against the computer, so begin with a function called getComputerChoice that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this function in the game to make the computer’s play. Tip: use the console to make sure this is returning the expected output before moving to the next step!
-//
-//XX2:Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
-//--Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
-//
-//3:Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
-//--Use prompt() to get input from the user.
-//
-
+//Initial setup
 let buttons = document.querySelectorAll('button');
 buttons.forEach(
     function(node) {
@@ -23,6 +10,47 @@ const playerScoreElement = document.querySelector(".player_score");
 let compScore = 0; 
 const compScoreElement = document.querySelector(".comp_score");
 
+//runs the main logic of the game
+function buttonListener () {
+	let playerSelection = this.className;
+	
+	let result = playRound(playerSelection);
+	//announce a winner after 5 points
+	const resultsElement = document.createElement("p");
+
+	if(result){
+		playerScore++;
+		playerScoreElement.innerText = playerScore;
+		if (playerScore >= 5 && playerScore > compScore){
+			winLogic(1);
+		}
+	}
+	else if(!result){
+		compScore++;
+		compScoreElement.innerText = compScore;
+		if (compScore >= 5 && playerScore < compScore){
+			winLogic(0);
+		}
+	}
+	else {
+		resultsElement.innerText = 'TIE';
+	}
+	
+	document.body.appendChild(resultsElement);
+
+}
+
+function winLogic(winner) {
+	let winMessage = '';
+	if(winner){
+		winMessage = 'Congrats! You won!';
+	}
+	else {
+		winMessage = 'You lost!';
+	}
+	alert(winMessage);
+}
+
 function getComputerChoice() {
 	let computerChoice = Math.floor(Math.random()*10);
 	switch (computerChoice!=undefined){
@@ -33,32 +61,6 @@ function getComputerChoice() {
 	 case computerChoice > 6:
 	  return "scissors";
 	}
-}
-
-function buttonListener () {
-	let playerSelection = this.className; //returns undefined
-	
-	let result = playRound(playerSelection); //parameter undefined, returns undefined
-	//(later)
-	//display running score
-	//announce a winner after 5 points
-	const resultsElement = document.createElement("p");
-	if(result){
-		resultsElement.innerText = 'YOU WON';
-		playerScore++;
-		playerScoreElement.innerText = playerScore;
-	}
-	else if(!result){
-		resultsElement.innerText = 'YOU LOST';
-		compScore++;
-		compScoreElement.innerText = compScore;
-	}
-	else {
-		resultsElement.innerText = 'TIE';
-	}
-	
-	document.body.appendChild(resultsElement);
-
 }
 
 function playRound(playerSelection) {
@@ -99,40 +101,3 @@ function playRound(playerSelection) {
 			return undefined;
 	}
 }
-
-// function checkPlayerInputisValid(playerSelection) {
-// 	if (typeof playerSelection === "string"){
-// 		if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
-// 			return true;
-// 		} else {
-// 			return false;
-// 		}
-// 	} else {
-// 		return false;
-// 	}
-// }
-
-/*
-function game(){
-	let playerSelection = prompt("Please input your selection: ");
-	if (playerSelection.toLowerCase() == "exit") return false;
-	if (!checkPlayerInputisValid(playerSelection)){
-		console.log("Please input a correct value");
-		round--;
-	} else {
-		let computerSelection = getComputerChoice();
-
-		let result = playRound(playerSelection, computerSelection);
-		let message;
-
-		if (result == null){
-			message = `This was a tie. Both players chose ${playerSelection}.`;
-		} else if (result){
-			message = `You WIN! ${playerSelection} beats ${computerSelection}.`;
-		} else {
-			message = `You LOSE! ${computerSelection} beats ${playerSelection}.`;
-		} 
-		console.log(message)
-	}
-}
-*/
